@@ -90,7 +90,6 @@ I'm a **DevOps Engineer** focused on automating infrastructure, streamlining CI/
   <img src="https://raw.githubusercontent.com/jav1d006/jav1d006/output/github-contribution-grid-snake-dark.svg" width="100%" />
 </div>
 
-> This animation is generated automatically by a GitHub Actions workflow (`snake.yml`) — see setup note below.
 
 ---
 
