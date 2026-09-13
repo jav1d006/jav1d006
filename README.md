@@ -69,33 +69,28 @@ I'm a **DevOps Engineer** focused on automating infrastructure, streamlining CI/
 
 ---
 
-### 🚀 Featured Projects
+### 🗂️ Projects
 
 <div align="center">
 
-<a href="https://github.com/jav1d006/Gitlab-Local-Kubernetes">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=jav1d006&repo=Gitlab-Local-Kubernetes&theme=tokyonight&hide_border=true" />
-</a>
-<a href="https://github.com/jav1d006/Linux-Hardening">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=jav1d006&repo=Linux-Hardening&theme=tokyonight&hide_border=true" />
-</a>
-
-<a href="https://github.com/jav1d006/SAST-DAST-RealProject">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=jav1d006&repo=SAST-DAST-RealProject&theme=tokyonight&hide_border=true" />
-</a>
-<a href="https://github.com/jav1d006/SAST-DAST-Scan">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=jav1d006&repo=SAST-DAST-Scan&theme=tokyonight&hide_border=true" />
-</a>
+| Project | Focus | Stack |
+|---|---|---|
+| [**Gitlab-Local-Kubernetes**](https://github.com/jav1d006/Gitlab-Local-Kubernetes) | Self-hosted GitLab on a local Kubernetes cluster | ![Kubernetes](https://img.shields.io/badge/-Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white) ![GitLab](https://img.shields.io/badge/-GitLab-FC6D26?style=flat-square&logo=gitlab&logoColor=white) |
+| [**Linux-Hardening**](https://github.com/jav1d006/Linux-Hardening) | Baseline hardening & security automation scripts for Linux servers | ![Linux](https://img.shields.io/badge/-Linux-FCC624?style=flat-square&logo=linux&logoColor=black) ![Bash](https://img.shields.io/badge/-Bash-4EAA25?style=flat-square&logo=gnubash&logoColor=white) |
+| [**SAST-DAST-RealProject**](https://github.com/jav1d006/SAST-DAST-RealProject) | Automated code & app scanning integrated into a CI pipeline | ![CI/CD](https://img.shields.io/badge/-CI%2FCD-2088FF?style=flat-square&logo=githubactions&logoColor=white) ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) |
+| [**SAST-DAST-Scan**](https://github.com/jav1d006/SAST-DAST-Scan) | Scanning automation toolkit, built in Python | ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white) |
 
 </div>
 
 ---
 
-### 🏆 Trophies
+### 🐍 Contribution Graph
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=jav1d006&theme=tokyonight&no-frame=true&row=1&column=6" />
+  <img src="https://raw.githubusercontent.com/jav1d006/jav1d006/output/github-contribution-grid-snake-dark.svg" width="100%" />
 </div>
+
+> This animation is generated automatically by a GitHub Actions workflow (`snake.yml`) — see setup note below.
 
 ---
 
