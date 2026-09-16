@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F2027,50:203A43,100:2C5364&height=220&section=header&text=Javid%20Mammadov&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=DevOps%20Engineer&descAlignY=55&descSize=20" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F2027,50:203A43,100:2C5364&height=220&section=header&text=Javid%20Mamedov&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=DevOps%20Engineer&descAlignY=55&descSize=20" width="100%"/>
 
 <a href="https://github.com/jav1d006">
   <img src="https://readme-typing-svg.demolab.com/?lines=Building+reliable+CI%2FCD+pipelines;Automating+infrastructure+with+IaC;Containerizing+%26+orchestrating+with+Kubernetes;Always+learning%2C+always+automating&font=Fira%20Code&center=true&width=650&height=45&color=2C5364&vCenter=true&size=22&pause=1200" alt="Typing SVG" />
