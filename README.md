@@ -1,65 +1,80 @@
-<div align="center">
+<p align="center">
+  <img src="assets/header.svg" width="100%" alt="Javid Mamedov, DevSecOps Engineer: Kubernetes, GitOps, secure CI/CD"/>
+</p>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F2027,50:203A43,100:2C5364&height=200&section=header&text=Javid%20Mamedov&fontSize=44&fontColor=ffffff&fontAlignY=36&desc=DevSecOps%20Engineer%20%C2%B7%20Kubernetes%20%C2%B7%20CI%2FCD%20Security&descAlignY=58&descSize=17&animation=fadeIn" width="100%" alt="Javid Mamedov, DevSecOps Engineer"/>
+<p align="center">
+  <a href="https://www.linkedin.com/in/javid-mamedov-20061104c/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+  <a href="mailto:javidmm.006@gmail.com"><img src="https://img.shields.io/badge/Email-Get%20in%20touch-2C5364?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
+  <a href="https://github.com/jav1d006?tab=repositories"><img src="https://img.shields.io/badge/Projects-Browse-203A43?style=for-the-badge&logo=github&logoColor=white" alt="Projects"/></a>
+</p>
 
-**I build delivery platforms where security is part of the pipeline, not a step after it.**
+## `$ whoami`
 
-<a href="https://www.linkedin.com/in/javid-mamedov-20061104c/"><img src="https://img.shields.io/badge/LinkedIn-Javid%20Mamedov-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
-<a href="mailto:javidmm.006@gmail.com"><img src="https://img.shields.io/badge/Email-javidmm.006%40gmail.com-2C5364?style=flat-square&logo=gmail&logoColor=white" alt="Email"/></a>
-<img src="https://img.shields.io/badge/Open%20to-remote%20%26%20international%20roles-203A43?style=flat-square" alt="Open to remote and international roles"/>
+I build delivery platforms where security is part of the pipeline, not a step after it. I design CI/CD that tests, scans, signs and ships software on every commit, and I run what I build: hardened containers, default-deny networking, monitoring and alerting included.
 
-</div>
+```yaml
+apiVersion: people/v1
+kind: Engineer
+metadata:
+  name: javid-mamedov
+  role: DevSecOps Engineer
+spec:
+  focus:         [kubernetes, gitops, secure-ci-cd, supply-chain-security]
+  platform:      [kubernetes, helm, argo-cd, docker, linux]
+  security:      [trivy, gitleaks, semgrep, checkov, sbom, cosign]
+  observability: [prometheus, grafana, alertmanager]
+  learning:      [aws, policy-as-code]
+  openTo:        remote and international roles
+```
 
-<br/>
+## `$ cat pipeline.yml`
 
-## About
+<p align="center">
+  <img src="assets/pipeline.svg" width="100%" alt="How I ship: commit, test, scan, sign, deploy, observe"/>
+</p>
 
-DevSecOps engineer focused on Kubernetes, GitOps and secure CI/CD. I design pipelines that test, scan, sign and ship software automatically, and I run what I build: hardened containers, default-deny networking, monitoring and alerting included.
+Every change goes through the same gates. A failing test, a leaked secret or a HIGH/CRITICAL CVE stops the release; everything that ships is signed, has an SBOM and is deployed through GitOps.
 
-- **Platform:** Kubernetes (kubeadm, kind), Helm, Argo CD, Docker, Linux
-- **Security:** SAST, SCA, secret and IaC scanning wired into CI as blocking gates; SBOMs and image signing
-- **Operations:** Prometheus, Grafana, Alertmanager, PostgreSQL backups, runbooks
-- **Currently:** going deeper into cloud infrastructure design on AWS and policy-as-code for Kubernetes
+## `$ ls ~/projects --featured`
 
-<br/>
+<table>
+<tr>
+<td width="50%" valign="top">
 
-## Featured projects
+### [SecureShip](https://github.com/jav1d006/secureship)
+**Self-hosted DevSecOps scanner**
 
-### [SecureShip](https://github.com/jav1d006/secureship)&nbsp;&nbsp;<sub>Self-hosted DevSecOps scanner · Python · Next.js · Kubernetes</sub>
+Drop in a project, get a 0–100 security score from eight scanners, with SARIF, PDF and a GitHub Action for pull requests. Built to the standard it checks for.
 
-<a href="https://github.com/jav1d006/secureship"><img src="https://raw.githubusercontent.com/jav1d006/secureship/main/docs/screenshots/home.png" width="100%" alt="SecureShip web interface"/></a>
+- Every scan runs in an isolated Kubernetes Job: no network, no credentials, read-only source
+- CI blocks HIGH/CRITICAL CVEs, publishes an SBOM and signs images with cosign
+- GitOps with Argo CD, Prometheus alerts unit-tested with `promtool`
 
-Upload a project and get a 0–100 security score from eight scanners (Gitleaks, Trivy, Bandit, Semgrep, Checkov, ShellCheck), with SARIF, CSV, JSON and PDF export and a GitHub Action for pull requests. The platform is built to the same standard it checks for:
+<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"/>
+<img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js"/>
+<img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white" alt="Kubernetes"/>
+<img src="https://img.shields.io/badge/Argo%20CD-EF7B4D?style=flat-square&logo=argo&logoColor=white" alt="Argo CD"/>
 
-- **Isolation:** every scan runs in its own Kubernetes Job with no network, no credentials and a read-only source mount; hardened ZIP extraction blocks zip-slip, symlinks and zip bombs
-- **Supply chain:** CI runs tests, secret scanning and a self-scan, blocks on HIGH/CRITICAL CVEs, then publishes a CycloneDX SBOM and a keyless cosign signature
-- **Runtime:** non-root, read-only containers, all capabilities dropped, default-deny NetworkPolicies
-- **Operations:** GitOps with Argo CD, Prometheus and Grafana, 8 alert rules unit-tested with `promtool`, Alertmanager e-mail, daily PostgreSQL backups
+</td>
+<td width="50%" valign="top">
 
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
-![Argo CD](https://img.shields.io/badge/Argo%20CD-EF7B4D?style=flat-square&logo=argo&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
-![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white)
+### [PulseBoard](https://github.com/jav1d006/PulseBoard)
+**Real-time microservices on Kubernetes**
 
-<br/>
+An anonymous team-health service (FastAPI, Redis, PostgreSQL, WebSockets) built as a vehicle for production-grade Kubernetes delivery.
 
-### [PulseBoard](https://github.com/jav1d006/PulseBoard)&nbsp;&nbsp;<sub>Real-time microservices on Kubernetes · Helm · GitHub Actions</sub>
+- Helm chart with HPA (2 → 6 replicas), PodDisruptionBudget, StatefulSet and NetworkPolicies
+- Every push spins up a disposable `kind` cluster in GitHub Actions, deploys the chart and runs smoke tests
+- Cloud-agnostic: runs on any cluster, no cloud bill
 
-An anonymous, real-time team-health service (FastAPI, Redis, PostgreSQL, WebSockets), built as a vehicle for production-grade Kubernetes delivery:
+<img src="https://img.shields.io/badge/Helm-0F1689?style=flat-square&logo=helm&logoColor=white" alt="Helm"/>
+<img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white" alt="GitHub Actions"/>
+<img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis"/>
+<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
 
-- **Packaging:** a configurable Helm chart with HPA (2 → 6 replicas), PodDisruptionBudget, StatefulSet storage and NetworkPolicies
-- **CI/CD:** every push spins up a disposable `kind` cluster inside GitHub Actions, installs the chart and runs smoke tests, so nothing to clean up and nothing to pay for
-
-![Helm](https://img.shields.io/badge/Helm-0F1689?style=flat-square&logo=helm&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
-
-<br/>
+</td>
+</tr>
+</table>
 
 ### More work
 
@@ -70,9 +85,7 @@ An anonymous, real-time team-health service (FastAPI, Redis, PostgreSQL, WebSock
 | [Gitlab-Local-Kubernetes](https://github.com/jav1d006/Gitlab-Local-Kubernetes) | Containerised app deployed to a local Kubernetes cluster through GitLab CI |
 | [SAST-DAST-RealProject](https://github.com/jav1d006/SAST-DAST-RealProject) | Intentionally vulnerable app scanned with Snyk (SAST) and OWASP ZAP (DAST) in CI |
 
-<br/>
-
-## Toolbox
+## `$ which --all tools`
 
 <table>
 <tr>
@@ -135,8 +148,6 @@ An anonymous, real-time team-health service (FastAPI, Redis, PostgreSQL, WebSock
 
 <br/>
 
-<div align="center">
-<sub>Interested in working together? The fastest way to reach me is <a href="https://www.linkedin.com/in/javid-mamedov-20061104c/">LinkedIn</a> or <a href="mailto:javidmm.006@gmail.com">e-mail</a>.</sub>
-</div>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2C5364,100:0F2027&height=90&section=footer" width="100%" alt=""/>
+<p align="center">
+  <img src="assets/footer.svg" width="100%" alt="Built, scanned, signed, shipped"/>
+</p>

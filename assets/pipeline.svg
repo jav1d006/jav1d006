@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="210" viewBox="0 0 1200 210" role="img" aria-labelledby="pt pd">
+  <title id="pt">How I ship software</title>
+  <desc id="pd">commit, test, scan, sign, deploy, observe</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1A20"/>
+      <stop offset="0.55" stop-color="#132C35"/>
+      <stop offset="1" stop-color="#1D4250"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#7FDBCA" stroke-opacity="0.07"/>
+    </pattern>
+    <linearGradient id="line" gradientUnits="userSpaceOnUse" x1="110" y1="0" x2="1090" y2="0">
+      <stop offset="0" stop-color="#2DD4BF" stop-opacity="0.35"/>
+      <stop offset="0.5" stop-color="#2DD4BF" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#2DD4BF" stop-opacity="0.35"/>
+    </linearGradient>
+    <radialGradient id="dot"><stop offset="0" stop-color="#E6FFFB"/><stop offset="0.4" stop-color="#5EEAD4"/><stop offset="1" stop-color="#2DD4BF" stop-opacity="0"/></radialGradient>
+    <clipPath id="card"><rect width="1200" height="210" rx="18"/></clipPath>
+  </defs>
+  <style>
+    .node { fill: #10252C; stroke: #2E5361; }
+    .check { opacity: 0; }
+    .runner { animation: run 7.0s linear infinite; }
+    @keyframes run { 0% { transform: translateX(0); opacity: 1; } 80% { transform: translateX(980px); opacity: 1; }
+                     94% { transform: translateX(980px); opacity: 0; } 100% { transform: translateX(0); opacity: 0; } }
+        @keyframes n0 { 0%, 0% { fill: #10252C; stroke: #2E5361; } 0.0%, 94% { fill: #134E4A; stroke: #5EEAD4; } 100% { fill: #10252C; stroke: #2E5361; } }
+    @keyframes c0 { 0%, 0% { opacity: 0; } 0.0%, 94% { opacity: 1; } 100% { opacity: 0; } }
+    .n0 { animation: n0 7.0s linear infinite; } .c0 { animation: c0 7.0s linear infinite; }
+    @keyframes n1 { 0%, 15.99% { fill: #10252C; stroke: #2E5361; } 16.0%, 94% { fill: #134E4A; stroke: #5EEAD4; } 100% { fill: #10252C; stroke: #2E5361; } }
+    @keyframes c1 { 0%, 15.99% { opacity: 0; } 16.0%, 94% { opacity: 1; } 100% { opacity: 0; } }
+    .n1 { animation: n1 7.0s linear infinite; } .c1 { animation: c1 7.0s linear infinite; }
+    @keyframes n2 { 0%, 31.99% { fill: #10252C; stroke: #2E5361; } 32.0%, 94% { fill: #134E4A; stroke: #5EEAD4; } 100% { fill: #10252C; stroke: #2E5361; } }
+    @keyframes c2 { 0%, 31.99% { opacity: 0; } 32.0%, 94% { opacity: 1; } 100% { opacity: 0; } }
+    .n2 { animation: n2 7.0s linear infinite; } .c2 { animation: c2 7.0s linear infinite; }
+    @keyframes n3 { 0%, 47.99% { fill: #10252C; stroke: #2E5361; } 48.0%, 94% { fill: #134E4A; stroke: #5EEAD4; } 100% { fill: #10252C; stroke: #2E5361; } }
+    @keyframes c3 { 0%, 47.99% { opacity: 0; } 48.0%, 94% { opacity: 1; } 100% { opacity: 0; } }
+    .n3 { animation: n3 7.0s linear infinite; } .c3 { animation: c3 7.0s linear infinite; }
+    @keyframes n4 { 0%, 63.99% { fill: #10252C; stroke: #2E5361; } 64.0%, 94% { fill: #134E4A; stroke: #5EEAD4; } 100% { fill: #10252C; stroke: #2E5361; } }
+    @keyframes c4 { 0%, 63.99% { opacity: 0; } 64.0%, 94% { opacity: 1; } 100% { opacity: 0; } }
+    .n4 { animation: n4 7.0s linear infinite; } .c4 { animation: c4 7.0s linear infinite; }
+    @keyframes n5 { 0%, 79.99% { fill: #10252C; stroke: #2E5361; } 80.0%, 94% { fill: #134E4A; stroke: #5EEAD4; } 100% { fill: #10252C; stroke: #2E5361; } }
+    @keyframes c5 { 0%, 79.99% { opacity: 0; } 80.0%, 94% { opacity: 1; } 100% { opacity: 0; } }
+    .n5 { animation: n5 7.0s linear infinite; } .c5 { animation: c5 7.0s linear infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .node, .check, .runner { animation: none !important; }
+      .node { fill: #134E4A; stroke: #5EEAD4; } .check { opacity: 1; } .runner { opacity: 0; }
+    }
+  </style>
+  <g clip-path="url(#card)">
+    <rect width="1200" height="210" fill="url(#bg)"/>
+    <rect width="1200" height="210" fill="url(#grid)"/>
+  </g>
+  <rect x="0.5" y="0.5" width="1199" height="209" rx="18" fill="none" stroke="#7FDBCA" stroke-opacity="0.18"/>
+  <text x="32" y="36" font-family="ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, Consolas, monospace" font-size="13" fill="#5EEAD4">$ git push origin main</text>
+  <text x="1168" y="36" text-anchor="end" font-family="ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, Consolas, monospace" font-size="13" fill="#6F8790">every commit · every time</text>
+  <line x1="110" y1="92" x2="1090" y2="92" stroke="url(#line)" stroke-width="3" stroke-dasharray="6 7" stroke-linecap="round"/>
+  <g class="runner"><circle cx="110" cy="92" r="20" fill="#2DD4BF" fill-opacity="0.18"/><circle cx="110" cy="92" r="8" fill="#E6FFFB" stroke="#5EEAD4" stroke-width="3"/></g>
+  <circle class="node n0" cx="110.0" cy="92" r="26" stroke-width="2.5"/>
+  <path class="check c0" d="M100.0 92 l7 7 l13 -14" fill="none" stroke="#5EEAD4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="110.0" y="150" text-anchor="middle" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="600" fill="#E6EDF3">commit</text>
+  <text x="110.0" y="174" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, Consolas, monospace" font-size="12.5" fill="#7C949D">git push</text>
+  <circle class="node n1" cx="306.0" cy="92" r="26" stroke-width="2.5"/>
+  <path class="check c1" d="M296.0 92 l7 7 l13 -14" fill="none" stroke="#5EEAD4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="306.0" y="150" text-anchor="middle" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="600" fill="#E6EDF3">test</text>
+  <text x="306.0" y="174" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, Consolas, monospace" font-size="12.5" fill="#7C949D">pytest · ruff</text>
+  <circle class="node n2" cx="502.0" cy="92" r="26" stroke-width="2.5"/>
+  <path class="check c2" d="M492.0 92 l7 7 l13 -14" fill="none" stroke="#5EEAD4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="502.0" y="150" text-anchor="middle" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="600" fill="#E6EDF3">scan</text>
+  <text x="502.0" y="174" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, Consolas, monospace" font-size="12.5" fill="#7C949D">trivy · gitleaks · semgrep</text>
+  <circle class="node n3" cx="698.0" cy="92" r="26" stroke-width="2.5"/>
+  <path class="check c3" d="M688.0 92 l7 7 l13 -14" fill="none" stroke="#5EEAD4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="698.0" y="150" text-anchor="middle" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="600" fill="#E6EDF3">sign</text>
+  <text x="698.0" y="174" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, Consolas, monospace" font-size="12.5" fill="#7C949D">sbom · cosign</text>
+  <circle class="node n4" cx="894.0" cy="92" r="26" stroke-width="2.5"/>
+  <path class="check c4" d="M884.0 92 l7 7 l13 -14" fill="none" stroke="#5EEAD4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="894.0" y="150" text-anchor="middle" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="600" fill="#E6EDF3">deploy</text>
+  <text x="894.0" y="174" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, Consolas, monospace" font-size="12.5" fill="#7C949D">argo cd · gitops</text>
+  <circle class="node n5" cx="1090.0" cy="92" r="26" stroke-width="2.5"/>
+  <path class="check c5" d="M1080.0 92 l7 7 l13 -14" fill="none" stroke="#5EEAD4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="1090.0" y="150" text-anchor="middle" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="600" fill="#E6EDF3">observe</text>
+  <text x="1090.0" y="174" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, Consolas, monospace" font-size="12.5" fill="#7C949D">prometheus · grafana</text>
+</svg>
