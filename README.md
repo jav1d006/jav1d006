@@ -12,6 +12,13 @@
 
 I build delivery platforms where security is part of the pipeline, not a step after it. I design CI/CD that tests, scans, signs and ships software on every commit, and I run what I build: hardened containers, default-deny networking, monitoring and alerting included.
 
+<p align="center">
+  <img src="assets/terminal.svg" width="100%" alt="A day in production: healthy pods, zero HIGH/CRITICAL CVEs, signature verified, next role DevSecOps Engineer at your team"/>
+</p>
+
+<details>
+<summary><code>$ kubectl get engineer javid -o yaml</code></summary>
+
 ```yaml
 apiVersion: people/v1
 kind: Engineer
@@ -27,6 +34,8 @@ spec:
   openTo:        remote and international roles
 ```
 
+</details>
+
 ## `$ cat pipeline.yml`
 
 <p align="center">
@@ -34,6 +43,14 @@ spec:
 </p>
 
 Every change goes through the same gates. A failing test, a leaked secret or a HIGH/CRITICAL CVE stops the release; everything that ships is signed, has an SBOM and is deployed through GitOps.
+
+## `$ kubectl get networkpolicy`
+
+<p align="center">
+  <img src="assets/defense.svg" width="100%" alt="Defense in depth: legitimate traffic flows through ingress to the API; direct database access and scan-job egress are denied"/>
+</p>
+
+Default-deny everywhere, explicit allows only. Containers run non-root on read-only filesystems with every capability dropped, and the jobs that touch untrusted code have no network and no credentials.
 
 ## `$ ls ~/projects --featured`
 
@@ -55,6 +72,25 @@ Drop in a project, get a 0–100 security score from eight scanners, with SARIF,
 <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white" alt="Kubernetes"/>
 <img src="https://img.shields.io/badge/Argo%20CD-EF7B4D?style=flat-square&logo=argo&logoColor=white" alt="Argo CD"/>
 
+<details>
+<summary><b>Architecture</b></summary>
+
+```mermaid
+flowchart TB
+    U([Browser / GitHub Action]) --> ING[ingress-nginx]
+    ING --> FE[Next.js]
+    ING --> API[FastAPI]
+    API --> PG[(PostgreSQL)]
+    API --> R[(Redis queue)]
+    R --> W[Worker]
+    W -->|one Job per scan| J[[Scan Job<br/>no network · read-only]]
+    J --> S{{Gitleaks · Trivy · Semgrep<br/>Bandit · Checkov · ShellCheck}}
+    GH[git push] --> CI[GitHub Actions<br/>tests · scans · SBOM · cosign] --> GHCR[(GHCR)]
+    GH --> ARGO[Argo CD] -->|sync| ING
+```
+
+</details>
+
 </td>
 <td width="50%" valign="top">
 
@@ -71,6 +107,22 @@ An anonymous team-health service (FastAPI, Redis, PostgreSQL, WebSockets) built 
 <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white" alt="GitHub Actions"/>
 <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis"/>
 <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
+
+<details>
+<summary><b>Architecture</b></summary>
+
+```mermaid
+flowchart TB
+    C([Team member]) -->|POST /pulse| ING[Ingress nginx]
+    ING --> API[FastAPI API<br/>HPA 2 → 6]
+    D([Live dashboard]) -.->|WebSocket| API
+    API -->|ZADD + PUBLISH| R[(Redis<br/>rolling 30-min window)]
+    WK[Worker] -->|every 60s aggregate| R
+    WK -->|snapshots + burnout alerts| PG[(PostgreSQL<br/>StatefulSet)]
+    GH[git push] --> CI[GitHub Actions] -->|ephemeral kind cluster| HELM[helm install + smoke test]
+```
+
+</details>
 
 </td>
 </tr>
@@ -145,6 +197,19 @@ An anonymous team-health service (FastAPI, Redis, PostgreSQL, WebSockets) built 
 </td>
 </tr>
 </table>
+
+<details>
+<summary><code>$ cat .secrets</code></summary>
+
+```console
+$ gitleaks detect --source . --redact
+Finding:  AWS_SECRET_ACCESS_KEY=REDACTED
+RuleID:   aws-secret-access-key
+File:     .secrets
+✖ 1 leak found. Commit blocked. Nice try.
+```
+
+</details>
 
 <br/>
 
